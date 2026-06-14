@@ -109,7 +109,7 @@ D3bot.NodeBlockingMap = {
 }
 
 ---@param nodeParams table
----@param nodePos Vector
+---@param nodePos GVector
 ---@param wave number
 ---@return boolean
 function D3bot.IsNavMeshNodeBlocked(nodeParams, nodePos, wave)
