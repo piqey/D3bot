@@ -8,7 +8,7 @@ Here is a list of notable changes compared to the original version:
 - Unidirectional links.
 - Links which are only usable by fast zombies.
 - Some more specific movement instructions for nodes to allow bots to handle obstacles better. (Duck when on a node, duck when moving towards a node, aim straight when on a node, aim straight towards a node, ...)
-- Conditions for nodes. (Allow or disallow the use of a node, if the said node is close to specific entities like doors, breakables, physic props, etc.)
+- Conditions for nodes. (Allow or disallow the use of a node, if the said node is close to specific entities like doors, breakables, physic props, etc.) (Thanks to [piqey])
 - Pouncing behavior for fast zombies or zombies based on that class. This makes these zombies much more dangerous, as they will hit you with a high certainty if you are within their jump range. They'll also use that ability to jump to the next or second next node if possible.
 - Small adjustments to the inner workings of the pathfinding algorithm. For example bots will now walk towards the next node until they are within its reach, and not until they are closest to it. This makes the bots movement behavior more predictable for navmesh creators, and also prevents bots from running in circles sometimes.
 - Zombies will only attack if the target is within reach. This makes wraith and fast zombie attacks much more surprising and effective.
@@ -162,8 +162,8 @@ Be sure to follow all the other necessary steps as described in [#Installation](
     - Condition = Unblocked: Bots will only use this node for pathfinding if there is no entity within a range of one source unit. Detected entities are func_breakable, prop_physics, prop_dynamic, prop_door_rotating, func_door, func_physbox_multiplayer, func_movelinear.
     - Condition = Blocked: Opposite of Unblocked. Use this on breakable pathways.
     - Condition = MapUnblocked: Same as Unblocked, but it excludes objects that could potentially be used in cades.
-	- BlockEntity = Entity types that should disable this node.
-	- BlockRadius = Proximity to node for blocking to occur.
+    - BlockEntity: Entity types that should disable this node. Possible values include: `func_breakable`, `prop_physics`, `prop_dynamic`, `prop_door_rotating`, `func_door`, `func_physbox_multiplayer`, `func_movelinear`. Use this in combination with `BlockRadius`.
+    - BlockRadius: Proximity to node for blocking to occur.
     - BlockBeforeWave: Bots will not use this node for pathfinding until the current wave is greater than or equal to the given value.
     - BlockAfterWave: Bots will not use this node for pathfinding if the current wave is greater than the given value.
     - DMGPerSecond: Apply damage to human players and entities located on this node. Can be disabled globally in `sv_config.lua` by setting `D3bot.DisableNodeDamage = true`.
@@ -235,5 +235,6 @@ Starting with highest public priority:
 [Half1569]: https://github.com/Half1569
 [NovaDiablox]: https://github.com/NovaDiablox
 [orecros]: https://github.com/orecros
+[piqey]: https://github.com/piqey
 [Sigilmare]: https://github.com/Sigilmare
 [Wolfaloo]: https://github.com/Wolfaloo
