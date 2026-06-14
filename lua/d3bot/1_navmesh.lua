@@ -47,17 +47,6 @@ return function(lib)
 	lib.NavMeshItemParamNameNumPairSeparator = "="
 	lib.NavMeshLinkNodesSeparator = "-"
 
-	lib.NodeBlocking = {
-		mins = Vector(-1, -1, -1),
-		maxs = Vector(1, 1, 1),
-		classes = { func_breakable = true, prop_physics = true, prop_dynamic = true, prop_door_rotating = true, func_door = true, func_physbox = true, func_physbox_multiplayer = true, func_movelinear = true }
-	}
-	lib.NodeBlockingMap = {
-		mins = Vector(-1, -1, -1),
-		maxs = Vector(1, 1, 1),
-		classes = { func_breakable = true, prop_dynamic = true, prop_door_rotating = true, func_door = true, func_movelinear = true }
-	}
-
 	lib.Params = {
 		Correct = {
 			Jump = { "Disabled", "Always" },
