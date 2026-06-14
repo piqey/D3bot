@@ -91,6 +91,23 @@ function D3bot.RemoveObsDeadTgts(tgts)
 	return D3bot.From(tgts):Where(function(k, v) return IsValid(v) and v:GetObserverMode() == OBS_MODE_NONE and not v:IsFlagSet(FL_NOTARGET) and v:Alive() end).R
 end
 
+-- List of entities that will be used to check whether nodes are blocked or unblocked.
+-- Used by the condition=blocked and condition=unblocked parameters.
+D3bot.NodeBlocking = {
+	mins = Vector(-1, -1, -1),
+	maxs = Vector(1, 1, 1),
+	classes = {func_breakable = true, prop_physics = true, prop_dynamic = true, prop_door_rotating = true, func_door = true, func_physbox = true, func_physbox_multiplayer = true, func_movelinear = true}
+}
+
+-- List of entities that will be used to check whether nodes are blocked or unblocked.
+-- Used by the condition=MapUnblocked parameter.
+-- This specific variant excludes anything that can be used to cade.
+D3bot.NodeBlockingMap = {
+	mins = Vector(-1, -1, -1),
+	maxs = Vector(1, 1, 1),
+	classes = {func_breakable = true, prop_dynamic = true, prop_door_rotating = true, func_door = true, func_movelinear = true}
+}
+
 ---@param nodeParams table
 ---@param nodePos Vector
 ---@param wave number
