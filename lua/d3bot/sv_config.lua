@@ -3,17 +3,6 @@ D3bot.BotSeeTr = {
 	maxs = Vector(15, 15, 15),
 	mask = MASK_PLAYERSOLID
 }
-D3bot.NodeBlocking = {
-	mins = Vector(-1, -1, -1),
-	maxs = Vector(1, 1, 1),
-	classes = {func_breakable = true, prop_physics = true, prop_dynamic = true, prop_door_rotating = true, func_door = true, func_physbox = true, func_physbox_multiplayer = true, func_movelinear = true}
-}
-
-D3bot.NodeBlockingMap = {
-	mins = Vector(-1, -1, -1),
-	maxs = Vector(1, 1, 1),
-	classes = {func_breakable = true, prop_dynamic = true, prop_door_rotating = true, func_door = true, func_movelinear = true}
-}
 
 D3bot.ValveNav = true						-- Enable the use of auto-generated nav-meshes ("SourceNav"). You can create these by using the console command "nav_generate".
 D3bot.ValveNavOverride = false				-- When true: Prefer auto-generated nav-meshes ("SourceNav") over manually created nav-meshes ("D3botNav").

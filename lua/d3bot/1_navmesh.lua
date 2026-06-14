@@ -59,6 +59,8 @@ return function(lib)
 			AimTo = { "Straight" },
 			Cost = {},
 			Condition = { "Unblocked", "Blocked", "MapUnblocked" },
+			BlockEntity = {},
+			BlockRadius = {},
 			BlockBeforeWave = {},
 			BlockAfterWave = {},
 			Direction = { "Forward", "Backward" },
